@@ -101,9 +101,16 @@ Now store a fahrenheit temperature into a variable.
 Convert it to celsius and output "NN°F is NN°C."
  */
 
-let c = 25
+/*let c = 25
 let fahr = -17.22 * celcius
 
 console.log(celcius + "celcius is " + fahrenheit);
 
-celcius = ((f-32)/1.8000)
+celcius = ((f-32)/1.8000)*/
+
+var celsius = 30;
+var celsiusInF = (celsius*9)/5 + 32;
+console.log(celsius + '°C is ' + celsiusInF + '°F');
+var fahrenheit = 20;
+var fahrenheitInC = ((fahrenheit - 32)*5)/9;
+console.log(fahrenheit + '°F is ' + fahrenheitInC + '°C');
