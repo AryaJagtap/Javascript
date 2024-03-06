@@ -137,14 +137,21 @@ console.log(booleanA);
 // // link to study
 // //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment
 
-let x = 3;
-const y = x++;
+// let x = 3;
+// const y = x++;
 
-console.log(`x:${x}, y:${y}`);
+// console.log(`x:${x}, y:${y}`);
 // Expected output: "x:4, y:3"
 
-let a = 3;
-const b = ++a;
+// let a = 3;
+// const b = ++a;
 
-console.log(`a:${a}, b:${b}`);
-// Expected output: "a:4, b:4"
+// console.log(`a:${a}, b:${b}`);
+// // Expected output: "a:4, b:4"
+
+let z = "10"
+let znum = Number(z)
+let x = 2 + znum
+console.log(x);
+// this will add the number , it will give output 12
+// z = "10a"  => this will not add the number, it will give output NaN
