@@ -1,4 +1,6 @@
 /*
+1.CONVERSION TO NUMBER
+
 //string
 let score = "33"
 
@@ -48,6 +50,73 @@ let numboolean = Number(boolean)
 console.log(typeof numboolean);
 console.log(numboolean);
 
-*/
+
+2.CONVERSION TO BOOLEAN
+
+let a = {}
+console.log(typeof a);
+console.log(a);
+
+let booleanA = Boolean(a)
+console.log(typeof booleanA);
+console.log(booleanA);
 
 
+ 1 = true
+ 10 = true
+ 0 = false
+ null = false
+ string = true
+ undefined = false 
+ "" = false
+ [] {} <= object = true 
+
+ 3. CONVERSION TO STRING
+ 
+
+ let a = []
+ console.log(typeof a);
+ console.log(a);
+ 
+ let booleanA = String(a)
+ console.log(typeof booleanA);
+ console.log(booleanA);
+
+ 
+  * true / false = true / false
+  * null = null
+  * undefined = undefined
+  */
+
+ //**********************************OPERATIONS*****************************************/
+
+let value = 3
+let negvalue = -value
+console.log(negvalue);
+
+console.log( 2 + 2 );
+console.log( 2 - 2 );
+console.log( 2 / 2 );
+console.log( 2 % 2 );
+console.log( 2 * 2 );
+console.log( 2 ** 3 ); // it is written as 2 raise to 3
+
+let str1 = "hello "
+let str2 = "arya"
+str3 = str1 + str2
+console.log(str3);
+
+console.log( "1" +  2 );
+console.log( 1   + "2"  + 3 );
+console.log( "1" +  2   + 2   );
+console.log( 1   +  2   + "2" );
+
+// when string is first and numbers are later on then the js convertes the later numbers (objects/elements) into string.
+// if numbers are 1st and then there is a string then the js converts the string into numbers
+// jo pahela rahega usme js next element ko convert karega.
+// https://tc39.es/ecma262/#sec-type-conversion
+
+console.log(3 + 4 * 5 % 3 ); //  this messey code is not recommended
+console.log((3 + 4) * 5 % 3 );  // use brackets to look proper
+
+console.log(true);
