@@ -1,3 +1,4 @@
+/*
 //string
 let score = "33"
 
@@ -20,4 +21,33 @@ console.log(valueinnumber2);
 // javascript converts the string into a number but at display it shows NaN if the converted string is not a pure number.
 // pure number = 1 2 3 4 5
 // impure number = 1 2 3 f g j @ # ! 
+
+// null
+let hahaha = null
+console.log(hahaha);
+console.log(typeof hahaha);
+
+let abcd = Number(hahaha)
+console.log(abcd);
+console.log(typeof abcd);
+
+// undefined
+let hehe = undefined
+console.log(hehe);
+console.log(typeof hehe);
+
+let kuchbhi = Number(hehe)
+console.log(kuchbhi);
+console.log(typeof kuchbhi);
+
+let boolean = true
+console.log(boolean);
+console.log(typeof boolean);
+
+let numboolean = Number(boolean)
+console.log(typeof numboolean);
+console.log(numboolean);
+
+*/
+
 
