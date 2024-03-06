@@ -4,9 +4,9 @@
 // <= - smaller than equal to
 // >= - greater than equal to 
 // != - not equal
-// === strict check 
-console.log("2" = 2);
-console.log(2 = 2);
+// === strict check . strict check not only checks the value but also checks for typeof the data.
+console.log("2" === 2); // false. since it is string and number
+console.log(2 === 2); // true 
 
 
 // 1. BETWEEN STRINGS
