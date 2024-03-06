@@ -90,33 +90,61 @@ console.log(booleanA);
 
  //**********************************OPERATIONS*****************************************/
 
-let value = 3
-let negvalue = -value
-console.log(negvalue);
+// let value = 3
+// let negvalue = -value
+// console.log(negvalue);
 
-console.log( 2 + 2 );
-console.log( 2 - 2 );
-console.log( 2 / 2 );
-console.log( 2 % 2 );
-console.log( 2 * 2 );
-console.log( 2 ** 3 ); // it is written as 2 raise to 3
+// console.log( 2 + 2 );
+// console.log( 2 - 2 );
+// console.log( 2 / 2 );
+// console.log( 2 % 2 );
+// console.log( 2 * 2 );
+// console.log( 2 ** 3 ); // it is written as 2 raise to 3
 
-let str1 = "hello "
-let str2 = "arya"
-str3 = str1 + str2
-console.log(str3);
+// let str1 = "hello "
+// let str2 = "arya"
+// str3 = str1 + str2
+// console.log(str3);
 
-console.log( "1" +  2 );
-console.log( 1   + "2"  + 3 );
-console.log( "1" +  2   + 2   );
-console.log( 1   +  2   + "2" );
+// console.log( "1" +  2 );
+// console.log( 1   + "2"  + 3 );
+// console.log( "1" +  2   + 2   );
+// console.log( 1   +  2   + "2" );
 
-// when string is first and numbers are later on then the js convertes the later numbers (objects/elements) into string.
-// if numbers are 1st and then there is a string then the js converts the string into numbers
-// jo pahela rahega usme js next element ko convert karega.
-// https://tc39.es/ecma262/#sec-type-conversion
+// // when string is first and numbers are later on then the js convertes the later numbers (objects/elements) into string.
+// // if numbers are 1st and then there is a string then the js converts the string into numbers
+// // jo pahela rahega usme js next element ko convert karega.
+// // link to study
+// //https://tc39.es/ecma262/#sec-type-conversion
 
-console.log(3 + 4 * 5 % 3 ); //  this messey code is not recommended
-console.log((3 + 4) * 5 % 3 );  // use brackets to look proper
+// console.log(3 + 4 * 5 % 3 ); //  this messey code is not recommended
+// console.log((3 + 4) * 5 % 3 );  // use brackets to look proper
 
-console.log(true);
+// console.log(true); // output will be true
+// console.log(+true); // output will be 1 // not recommended
+// console.log(+""); // output = 0   // not recommended
+
+
+// let num1 , num2 , num3 
+// num1 = num2 = num3 = 2 + 2 
+// //again not recommended.
+// // readability should be there in code
+
+// let gamecounter = 100
+// ++gamecounter  // precedence operator prefix
+// gamecounter++  // precedence operator postfix
+// console.log(gamecounter);
+// // link to study
+// //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment
+
+let x = 3;
+const y = x++;
+
+console.log(`x:${x}, y:${y}`);
+// Expected output: "x:4, y:3"
+
+let a = 3;
+const b = ++a;
+
+console.log(`a:${a}, b:${b}`);
+// Expected output: "a:4, b:4"
