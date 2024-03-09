@@ -6,7 +6,7 @@ console.log(name + repocount + "value"); // but this is old method
 console.log(`hello my name is ${name} and my repocount is ${repocount}`); // this is new and modern method
 // this method is know asstring interpolation where inside backticks `` ${} is used .
 
-const gameName = new String('king@kong')
+const gameName = new String('king@kong')  // string can also be declared like this, using new keyword
 
 console.log(gameName[0]);
 console.log(gameName.__proto__);
