@@ -37,7 +37,7 @@ const heros = ["shaktiman" , "naagraj","doga"];  // arrays are declared in squar
     age : 20                          
 
 }
-
+// ** always use commas to seperate key value objects pairs
 // objects are always represented like this in key-value pair by using colen.
 // objects ke ander another object bhi ho sakta hai , function bhi ho sakta hai , string bhi , number bhi, boolean, etc etc
 // objects are also represented by giving a variable like below
@@ -68,3 +68,45 @@ JavaScript is a dynamically typed language, which means that data types of varia
 
 // link for study
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+
+// link od this lec as this lec contains diagramatic explaination of stack and heap memory
+// https://www.youtube.com/watch?v=7gwc-1czolw&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=10&ab_channel=ChaiaurCode
+
+// Stack (Primitive) , Heap (Non-Primitive)
+// memories are of two types, stack memory and heap memory.
+// all theprimitive data are stored in stack memory while all the non primitive data is stored in heap memory.
+
+/**
+ * Stack memory:
+ * stack memory mai data ki copy milti hai... koi bhi changes agar value mai karo to chnages copy mai hote hai original data mai nahi
+ */
+
+let myYoutubechannel = "aryadotcom"
+
+let anotherchannel = myYoutubechannel
+anotherchannel = "pokemon"
+
+console.log(myYoutubechannel);
+console.log(anotherchannel);
+
+
+/**
+ * heap memory:
+ * heap memory mai data ka reference banta hai....koi bhi changes agar value mai karo to changes original data mai bhi ho jata hai
+ */
+
+let userOne = {
+    email : "userone@gmail.com",
+    upi : "userone@ybl"
+
+}
+
+let userTwo = userOne
+
+userTwo.email = "arya@gmail.com"   // object ko . lagakar access kiya jata hai.
+
+console.log(userOne.email);
+console.log(userTwo.email);
