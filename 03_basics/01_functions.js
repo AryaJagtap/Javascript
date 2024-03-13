@@ -95,3 +95,100 @@ console.log(loginusermessage());
 // and if some value is passed through arguments then the parameters will rewrite the argumented value 
 console.log(loginusermessage("Arya"));
 
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+function calculatecartprice (...num1) {
+    return num1
+}
+
+console.log(calculatecartprice(200));
+// when argument is only one value
+
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function calculatecartprice (...num1) {
+    return num1
+}
+
+console.log(calculatecartprice(200,400,500));
+
+// when argument is more than one value
+
+// ... is known as spread operator also and rest operator also
+// here ... is used as rest operator
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+function calculatecartprice (val1, val2, ...num1) {
+    return num1
+}
+
+console.log(calculatecartprice(200,400,500,300,700));
+// 200 is passed in val1
+// 400 is passed in val 2
+// rest all are passed in num1 through rest operator(...)
+
+//NOTE: ... is spread operator when we need to merge multiple data in one set. And ... is rest operator when we want to dismerge multiple data from 1 set
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// passing object through function
+
+// when pre made object is passed through arguments
+const user = {
+    username : "arya",
+    price: 199
+}
+
+function handleobject (anyobject){
+    console.log(`username is ${anyobject.username} and price is ${anyobject.price}`);  
+
+}
+
+handleobject(user)
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// when direct object is passed through arguments
+function handleobject (abcd){
+    console.log(`username is ${abcd.username} and price is ${abcd.price}`);  
+
+}
+
+handleobject({
+    username :"sam",
+    price : 399
+})
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// passing arrays through funciton
+
+const mynewarray = [200,400,600,1000]
+
+// 1st method
+
+function arraythroughfunction (sendparameters){
+    return sendparameters[2]
+}
+
+console.log(arraythroughfunction(mynewarray));
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// 2nd method
+function arraythroughfunction (sendparameters){
+    return sendparameters[2]
+}
+
+console.log(arraythroughfunction([200,400,800,1200]));
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// 3nd method
+function arraythroughfunction (sendparameters){
+    return console.log(sendparameters[2]);
+}
+
+arraythroughfunction(mynewarray)
