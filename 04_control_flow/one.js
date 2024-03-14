@@ -97,8 +97,8 @@ if (userloggedin && debitcard && 2==2 ){
     console.log("allowed to buy courses");
 }
 
-// && and conditon = check both the conditions should be true
-// || or conditon = this is used to check multiple conditions
+// && and conditon = and ka matlab sari true honi chayea
+// || or conditon = or matlab ek bhi true ho to bhi chalega
 
 if (loggedinfromgoogle || loggedinfromemail ) {
     console.log(" user logged in");
