@@ -4,11 +4,11 @@
 
 // conditional check
 
-for (let index = 0; index <= 10 ; index++) {
-    const element = index;
-    console.log(element);
+// for (let index = 0; index <= 10 ; index++) {
+//     const element = index;
+//     console.log(element);
     
-}
+// }
 
 // flow of for loop 
 // 1) (let index = 0;) this is variable decleration or initialization
@@ -33,7 +33,9 @@ for (let i = 0; i <= 10 ; i++) {
     
 }
 // console.log(element); // element cannot be accessed outside the loop
+///////////////////////////////////////////////////////////////////////////////////////
 
+// loop ke ander conditional statement
 for (let i = 0; i <= 10 ; i++) {
     const element = i;
     if (element == 5) {
@@ -42,4 +44,13 @@ for (let i = 0; i <= 10 ; i++) {
    // console.log(element);
     
 }
+/////////////////////////////////////////////////////////////////////////////////
 
+// loop ke ander loop
+
+for (let i = 0; i <= 10; i++) {
+    const element = i;
+    console.log(`Outer loop value ${i}`);
+    
+
+}
