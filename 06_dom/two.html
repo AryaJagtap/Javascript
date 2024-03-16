@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom | chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day">thursday</div>
+        <div class="day">friday</div>
+
+    </div>
+</body>
+<script>
+    // parent element ko select karo aur pata lagao kya kya values aati hai
+    // isko ek variable mai save karte hai
+    const parent = document.querySelector(".parent")
+    
+    // console log karke pata karte hai ki iske ander kya kya values save hai
+    console.log(parent);
+
+    // .children ye ek property hai jiss se parent ke ander kitne childeren hai ye pata chalta hai
+    console.log(parent.children);
+
+    // hame mila hai HTMLCollection // HTMLCollection array jaisa hota hai par array nahi hota...it has some properties like array but not all properties of array
+    // it dont have foreach loop property nor property like maps
+    //but TMLCollections can be converted into array , that we will see futher in the course
+    // to access any element in HTMLcollection write which element to access in [] square brackets just like array
+    console.log(parent.children[1]);
+
+    // by using .innerHTML property you can print the element// eg. here tuesday has been printed as element 1 is tuesday and element 0 is monday
+    console.log(parent.children[1].innerHTML);
+    
+    // classic (basic) for loop is applicable on HTMLCollection
+    // parent.children hame HTMLCollection deta hai not parent 
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        // innerHTML means display huve page pe jo html tag ke ander likha hai usko bolte hai innerHTML 
+        // eg. <html> iss tag ke ander jo bhi aata hai wo sab inner html elements hote hai </html>
+
+    }
+    // styling bhi kar sakte hai
+    parent.children[1].style.color = " orange"
+    
+    // there is not only children property to the parent but also many more
+    // shows 1st elemet
+    console.log(parent.firstElementChild);
+
+    // shows last element
+    console.log(parent.lastElementChild);
+
+    //queryselector always selects the first element not all elements
+    //queryselectorall selects all the elements
+    
+    //now just like from parent to child you can go reverse also from child to parent
+    const dayone = document.querySelector(".day")
+    console.log(dayone);
+
+    // to do to parent element
+    console.log(dayone.parentElement);
+
+    // can use multiple properties together as below
+    // console.log(dayone.parentElement.parentElement.parentElement.parentElement);
+
+    // next element sibling pe bhi ja sakte hai as below
+    console.log(dayone.nextElementSibling);
+
+    // 16.34 timestamp Nodelist **Important Concept**
+    //https://www.youtube.com/watch?v=xAvTgCsCHLs&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=33&ab_channel=ChaiaurCode 
+
+    
+    
+</script>
+</html>
+
+
+<!-- 16.34 timestamp Nodelist **Important Concept** -->
+<!-- https://www.youtube.com/watch?v=xAvTgCsCHLs&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=33&ab_channel=ChaiaurCode -->
