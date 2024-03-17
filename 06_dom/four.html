@@ -43,5 +43,52 @@
     addlanguage("python") // string
     addlanguage("true") // boolean
     addlanguage(100) // number
+    // iss method mai hamesha tree traverse karna pad raha hai . here there are only 4 elements so its ok, but what if there are 1000 or 10000 elements, its not easy to always traverse the tree 
+
+    // so another optimised method is given below
+    function addoptilangauge (langname){
+        const element= document.createElement("li")
+
+        // const addtext = document.createTextNode(langname)
+        // element.appendChild(addtext)
+        
+        //  or  //
+        // both are same ,create a variable then call that variable or directly call it dosent matter bas thoda sa space save kiya hai
+        
+        element.appendChild(document.createTextNode(langname)) // ONLY FOR UNDERSTANDING ..... element.appendchild.python  // directly ho gaya. use creattextnode to directly attach a new node 
+
+        // last step will remain same
+        document.querySelector(".language").appendChild(element)
+    }
+    addoptilangauge("golang")
+    // yeha reference nahi hai issleya add karne ke leya function banana pada
+
+    // dont always run for innerHTML, try using appendchild method , as appendchild directly adds the text instead of overwriting as it does in innerHTML
+
+    // edit a value
+    // querySelector is a powerful selector jo  aaya to tha jquery se but isme css ke selectors js ke selectors ,jquery ke selector sab acche se kaam karte hai 
+
+    //select the element which you want to edit using queryselector
+    // const secondlang = document.querySelector("li:nth-child(2)") // colon ke baad space nahi dena nahi to error milega 
+    // secondlang.innerHTML = "mojo"
+
+    // optimise way
+    // naya pura element banake usko append kiya iss method mai
+    const secondlang = document.querySelector("li:nth-child(2)")
+    console.log(secondlang); // kabhi confusion huva to console.log karke dekh leneka kya value aa rahi hai
+    const newli = document.createElement("li")
+    newli.textContent = "c++"
+    secondlang.replaceWith(newli)
+    // yeha reference hai issleya add karne ke leya functon banane ke jage reference kele directly edit kiya
+    // aur element exist karta hai issleya reference lena bhot asan hai
+
+    // edit another method
+    const firstlang = document.querySelector("li:first-child")
+    firstlang.outerHTML = "<li>Typescript</li>"
+
+    // remove 
+    const lastlang = document.querySelector("li:last-child")
+    lastlang.remove()
+
 </script>
 </html>
