@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code | dom</title>
+</head>
+<body  style="background-color: #212121; color: #fff;">
+    <ui class="language">
+        <li>javascript</li>
+    </ui>
+</body>
+<script>
+    // creating a function to add language
+
+    // 1st create a normal function
+    // give function a name like addlangauge
+    // pass the parameters name whatever you like. eg language name
+    function addlanguage(langname){
+
+        //create an element using document.create element property and write which type of element you want in parenthesies() with "" . eg ("div"), ("h1"),etc
+        // then save the created element inside a variable. here variable name is given as list
+        const list = document.createElement("li");
+
+        // we will the the name through parameter, so write the parameter also if anything else want to add write those in ``
+        //to write the text we can use .innerHTML OR  .innerTextContent , etc
+        // select the element where you want to add the text, here our element in saved in a variable names list
+        // list pe .innerHTML property laganese text add kar sakte hai , aur kya add karna hai wo equato = ke aage likhneka
+        list.innerHTML = `added langauge is ${langname}`
+        list.innerHTML = langname // comment nahi kiya to verwrite ho jayega
+
+
+        // .language is the class where we want to add our text(element)
+        // .langauge is the class in ul which we have created in the body
+        // .appendChild is the property through which we can add the child to the parent class
+        // here list is passed through .appendChild(list) , which means we want to append list variable(element)
+        // document.querySelector() is the method or syntax by which we can access anything, just like console.log()
+        // so in short document.querySelector() ke through class select kiya , fir appendchild property use karke child append kiya uss class mai aur (parenthesies) mai wo variable pass kiya jo append karna hai
+        document.querySelector(".language").appendChild(list)
+    }
+    // normally function call karte hai waisa function call kiya hai 
+    // aur jo argument pass karna hai wo likha hai , since it is a string usko "" iske ander likha hai
+    addlanguage("python") // string
+    addlanguage("true") // boolean
+    addlanguage(100) // number
+</script>
+</html>
