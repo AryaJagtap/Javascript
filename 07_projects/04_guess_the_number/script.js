@@ -2,11 +2,11 @@ const form              = document.querySelector('.form')
 const resultparas       = document.querySelector('.resltParas')
 const allguesses        = document.querySelector('.guesses')
 const remainingguesses  = document.querySelector('.lastResult')
-const lowhigh           = document.getElementsByClassName('.low/high')
+const lowhigh           = document.querySelector('#lowhigh')
 const receivedinput     = document.querySelector('#guessField')
 const submitbutton      = document.querySelector('#subt')
 
-const randomNumber      = Math.round((Math.random() * 100 + 1))
+let randomNumber      = Math.round((Math.random() * 100 + 1))
 const div               = document.createElement('div')
 let prevGuess = []
 let numguess = 1
@@ -62,8 +62,30 @@ function displayguess (guess){ // display guess nahi samjha
 }
 
 function displaymessage (message){
-   
+   lowhigh.innerHTML = `<h2>${message}</h2>`
 }
-function endgame (guess){}
-function startgame (guess){}
+
+function endgame (guess){
+    receivedinput.value = ''
+    receivedinput.setAttribute('disabled', '') // disables attribute hamesha key value pair mai set hota hai
+    div.classList.add('button')
+    div.innerHTML = `<h3 id = "newgame"> start new game</h3>`
+    resultparas.appendChild(div)
+    playGame = false
+    newgame()
+}
+function newgame (guess){
+   const newgamebutton = document.querySelector('#newgame')
+   newgamebutton.addEventListener('click', function (params) {
+        randomNumber = Math.round((Math.random() * 100 + 1))
+        prevGuess = []
+        numguess = 1
+        allguesses.innerHTML = ''
+        remainingguesses.innerHTML = `${11-numguess}`
+        receivedinput.removeAttribute('disabled')
+        resultparas.removeChild(div)
+        playGame = true
+    
+   })
+}
 
