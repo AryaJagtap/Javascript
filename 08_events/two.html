@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai aur code</h1>
+    <button id="stop">stop</button>
+</body>
+<script>
+    // setTimeout(function (){
+    //     console.log("arya");
+    // },2000)
+
+    //or //same
+
+    // const sayArya = function (){
+    //     console.log("arya");
+    // }
+
+    // setTimeout(sayArya,2000) 
+    // // give reference i.e sayArya 
+    // // dont execute, i.e sayArya()
+    // // execute karoge to directly job executed dikhegi, reference doge to job time aane pe execute hogi
+
+
+    // setInterval(() => {
+    //     console.log("hello arya");
+    // }, 2000);
+
+
+    const changeName = function changename (){
+        document.querySelector('h1').innerText = ' javascript full playlist'
+
+    }
+   const changeme = setTimeout(changeName , 2000)
+
+    // bina variable liye direct function ka naam settimeout mai pass karke bhi same hi result aata hai 
+    //setTimeout(changename , 5000)
+
+        // to clear timeout
+    // clearTimeout(changeme)
+
+    document.querySelector('#stop').addEventListener('click', function name(params) {
+        clearTimeout(changeme)
+        console.log("stopped");
+    })
+
+</script>
+</html>
