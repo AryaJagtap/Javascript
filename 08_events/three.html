@@ -24,9 +24,23 @@
 //     }
 //    const intervalid =  setInterval(saydate, 1000 , "hi");
 
-//     clearInterval(intervalid)
+//     clearInterval(interval)
+
+const startprinting = function (sayname){
+    console.log(sayname);
+}
+ let intervalid;
+
+document.querySelector('#start').addEventListener('click',function(){
+    intervalid = setInterval(startprinting , 2000, "arya")
+})
 
 
+
+document.querySelector('#stop').addEventListener('click', function (){
+    clearInterval(intervalid)
+    console.log("stopped printing");
+})
 
 </script>
 </html>
