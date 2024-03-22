@@ -1,10 +1,23 @@
-java script single threaded hoti hai...
+# Execution Context
 
- given scripe/code ke 2 parts banenge
+(1) Java script single threaded hoti hai...
 
-1st global Execution context banega 
-then wo "this" variable mai save hoga
+(2) Given scripe/code ke 2 parts banenge
 
-https://www.youtube.com/watch?v=ByhtOgF6uYM&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=25&ab_channel=ChaiaurCode
+(3) 1st global Execution context banega then wo "this" variable mai save hoga
 
-link for this concept video as this concept contains diagramatic  explaination. 
+[Link, contains Conceptual Explaination](https://www.youtube.com/watch?v=ByhtOgF6uYM&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=25&ab_channel=ChaiaurCode)
+
+![alt text](<Screenshot (8).png>)
+
+![alt text](<Screenshot (9).png>)
+
+![alt text](<Screenshot (10).png>)
+
+![alt text](<Screenshot (13).png>)
+
+![alt text](<Screenshot (14).png>)
+
+![alt text](<Screenshot (16).png>)
+
+![alt text](<Screenshot (17).png>)
