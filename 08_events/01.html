@@ -18,5 +18,219 @@
         </ul>
    </div>
 </body>
-<script src="/08_events/01_eventBasics.js"></script>
+<script>
+
+    // written by hitesh//
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+
+     // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+    
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+   
+    
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     console.log(e.target.tagName);
+    //     if (e.target.tagName === 'IMG') {
+    //         console.log(e.target.id);
+    //         let removeIt = e.target.parentNode
+    //         removeIt.remove()
+    //     }
+    
+        
+    // })
+    
+    //removeIt.parentNode.removeChild(removeIt)
+
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+   // written by me//
+
+   // javascript ke ander jitni bhi events hote hai wo sab sequentuilly hi run hote hai, kuch exceptions hote hai jiase ki async events aur browsers ke events, ye events kaise hote hai ki ye kisi activity pe invoke hote hai, aisa nahi ki sequentuilly file mai likh hai to waise hi line mai invoke honge.
+   // koi na koi activity hogi , jaise ki mouse drag kiya, click kiya ,etc etc
+
+   // approach 1:
+
+    //    <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+
+   // html tag mai hi onclick , etc etc likh ke events ko use karna ye approch bilkul bhi theak nahi hai, because ye feasable approch nahi hai; jab scale karega apka application tab bhot jyada problem hogi iss approch se. DO NOT INJECT EVENTS IN HTML CODE..
+
+   // approach 2 :
+
+//    document.getElementById('owl').onclick = function(){
+//     alert('owl clicked')
+//    }
+
+   // ye approach bhi dikhne mai bhot acchi hai.. lekin kya hai aap id pe onclick event laga rahe hai to , onclick event mai kuch problem ho sakti hai, kyu ki bhot jyada info nhai milti hai, features kam deta hai
+
+   // actually event listners use karna chayea , because it not only gives events lik eonclick functionality but also gives propogation ability
+
+   // approach 3: best approach
+
+   // eventlistner is very powerful, it listens to the events of keyboard, mouse like drag and drop, click ,hover , etc etc
+
+//    document.getElementById('owl').addEventListener('click',function(){
+//     alert('owl clicked again')
+//    }, false)
+
+   // 3rd parameter default false hota hai issleya likhne ki jarurat nahi hoti
+
+   // attachEvent () ye usekarke bhi ek approachhai
+   //jQuery mai ek .on event hota hai ... this is also one approach
+////////////////////////////////////////////////////////////////////////////
+
+//    // now lets learn about event object(e)
+//    document.getElementById('owl').addEventListener('click',function(e){
+//     console.log(e);
+//    }, false)
+   
+   // event object ke ander bhot saare events milte hai jaise ki pointer event uske ander client x, client y , etc etc
+   // mostly brower events aur environment ke events milenge 
+   // browser events 
+   // environment events like mouse ne kaha pe click kiya, konsi position thi mouse ki , etc etc
+   // kis time pe click huva , timestamp
+
+   // BASICS EVENTS TO STUDY
+   // type - keyboard ke type events, mouse ke type events, etc
+   // timestamp - date activities kaise change karte hai, etc etc
+   // defaultPreventes - to stop default behaviour of any tag
+   // target 
+   //toElement
+   // srcElement
+   // currentTarget
+   // clientX, client Y , screenX , screenY - ususally asked in interviews
+   // altkey, ctrlkey , shiftkey , keyCode
+
+   //////////////////////////////////////////////////////////////////////////
+
+   // event propogation (false/true)
+
+//    document.getElementById('owl').addEventListener('click',function(e){
+//     console.log(e);
+//    }, false)
+
+   // 2 context of event propogation 
+   // event bubbling = false   ( mostly used)
+   // event capturing = true
+
+   // [1] event bubbling
+   // bubbling : means goint up from down, jaise bubble neeche se upar jata hai, waise hi pahele ander(neeche) wala event hoga fir bahar(upar) wala event hoga
+
+//    document.getElementById('images').addEventListener('click',function(e){
+//     console.log('clicked inside the ul');
+//    }, false)
+
+//    document.getElementById('owl').addEventListener('click',function(e){
+//     console.log('owl clicked');
+//    }, false)
+
+   // output
+   // owl clicked
+   // clicked inside the ul
+
+   //[2] event capturing
+   // capturing : captures from to to bottom , pahele bahar(upar) wala event hoga then ander(inner) event hoga
+//    document.getElementById('images').addEventListener('click',function(e){
+//     console.log('clicked inside the ul');
+//    }, false)
+
+//    document.getElementById('owl').addEventListener('click',function(e){
+//     console.log('owl clicked');
+//    }, false)
+
+   // output
+   // clicked inside the ul
+   // owl clicked
+
+   ///////////////////////////////////////////////////////////////
+
+   // sometimes in the scenario where there are two different events placed on to elements which are one inside another and you dont want to clash the events 
+   // at this time stopPropgation() is used, it is same like preventDefault
+
+//    document.getElementById('images').addEventListener('click',function(e){
+//     console.log('clicked inside the ul');
+    
+//    }, false)
+
+//    document.getElementById('owl').addEventListener('click',function(e){
+//     console.log('owl clicked');
+//     e.stopPropagation()
+//    }, false)
+   // always remember to use stoppropogation on the event which is passed through the function.
+   // NOTE: always remember neeche wale (innermost element ) pe stoppropagation used kiya haia hai
+
+   //////////////////////////////////////////////////////////////////////
+
+   // preventdefault 
+
+//    document.getElementById('google').addEventListener('click', function(e){
+//     e.preventDefault(); // prevents default 
+//     e.stopPropagation() // stop bubbling of event
+//     console.log("google clicked");
+//    },false)
+
+   ///////////////////////////////////////////////////////////////////
+
+   // images disappear
+
+//    document.querySelector('#images').addEventListener('click', function(e){
+//     console.log(e); // pointer event milega
+//     console.log(e.target); // image ka link milega
+//     console.log(e.target.parentNode); // parent node milga (li) jo actually disapper karna hai na 
+//     // target disapper karenge to (li) rehe jayega aur link gayab ho jayegi aur (li) ka mark(dot) dikhega
+//     let removeIt = e.target.parentNode
+//     // removeIt.remove() 1st option
+//     removeIt.parentNode.removeChild(removeIt)  // 2nd option
+//     // 2nd option says, remove child naam ka functon hai remove parent naam ka koi function nahi hai... issleya pahele child se parentnode pe janeka aur waha remove child mothod use karneka aur parenthesises mai jis child ko remove karna hai uska naam pass karneka
+//    }, false)
+
+   // this method se pura list disapper ho jayega agar li pe click kiya to , because li ka parent ul hai issleya [ this is known as event spill over]
+   // so now need to introduce some strick checks... that is use if else 
+
+   document.querySelector('#images').addEventListener('click', function(e){
+
+    console.log(e.target.tagName); 
+
+    if (e.target.tagName === 'IMG') {
+
+        console.log(e.target.id);
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+    }
+    
+   }, false)
+
+
+
+   /*   mdn syntax of eventlistner
+   
+        addEventListener(type, listener)
+        addEventListener(type, listener, options)
+        addEventListener(type, listener, useCapture)
+   
+   
+   */
+
+
+</script>
 </html>
