@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <div>
+        <div id="divimage">image</div>
+        <div id="divfollowers">followers</div>
+        <button> Click to get data</button>
+    </div>
+</body>
+<script>
+    // const requestUrl = 'https://api.github.com/users/AryaJagtap'
+    // const xhr = new XMLHttpRequest() // it is almost a class 
+    // after creating this only you can access all the methods like open(), send(), etc
+
+   // xhr.open(method, string) // 2 parameters required
+    // xhr.open('GET',requestUrl)
+    // console.log(xhr.readyState);
+    // xhr.onreadystatechange = function () {
+    //     console.log(xhr.readyState);
+    //     if (xhr.readyState === 4) {
+    //         let data = this.responseText
+    //         console.log(typeof data); // usually mostly jab bhi urls se response aata hai wo string mai aata hai aur rarely object mai aata hai..
+            
+    //         data = JSON.parse(this.responseText) // this is how to convert string into json 
+    //         // string se object ban gaya to .followers use karke values access kar sakte hai
+    //         // parse is use to convert
+    //         // JSON is use to understand kisme convert karna hai
+            
+    //         console.log(typeof data);
+    //         console.log(data.followers);
+    //     }
+    // }
+    
+    // xhr.send()
+
+    //////////////////////////////////////////////////////////////////////
+    // assignment 
+
+    let myurl = 'https://api.github.com/users/AryaJagtap'
+    let myXHR = new XMLHttpRequest()
+    let myavatar;
+    let myfollowers;
+
+    myXHR.open('GET', myurl)
+    console.log(myXHR.readyState);
+    myXHR.onreadystatechange = function () {
+
+        console.log(myXHR.readyState);
+        if (myXHR.readyState === 4) {
+            let data = JSON.parse(this.responseText)
+            console.log(data.avatar_url);
+            myavatar = data.avatar_url
+            myfollowers = data.followers
+            console.log('hello');
+
+        }
+        
+    }
+    myXHR.send()
+
+    
+    let  imgdiv = document.querySelector('#divimage')
+    let  folldiv = document.querySelector('#divfollowers')
+    const button = document.querySelector('button').addEventListener('click',function(){
+       imgdiv.innerHTML = 
+       folldiv.innerHTML = `Followers : ${myfollowers}`
+    })
+    
+</script>
+</html>
