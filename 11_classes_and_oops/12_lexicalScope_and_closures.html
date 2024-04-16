@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical and Closure</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+    <script>
+
+    // lexical scope
+
+    function init() {
+
+        var name = "Mozilla"; // name is a local variable created by init
+
+        function displayName() {
+
+            // displayName() is the inner function, that forms the closure
+
+            console.log(name); // use variable declared in the parent function
+        }
+
+        displayName();
+    }
+    init();
+
+    ////////////////////////////////////////////////////////////////////
+
+    function outer(){
+
+        let username = "arya"
+
+        function inner (){
+
+            let secret = "my123"
+            console.log("inner" , username);
+        }
+        inner()
+
+        // console.log(secret); parent cannot access child variable
+
+        function innerTwo(){
+
+            console.log("innerTwo", username);
+            // console.log(secret); // sibling cannot access sibling variable
+        }
+        innerTwo()
+    }
+    outer()
+
+    // console.log("TOO OUTER", username); // error : not accessable outside the lexical scope
+
+    /////////////////////////////////////////////////////////////////////
+
+    // closure
+
+    function makeFunc() {
+
+        const name = "Mozilla";
+
+        function displayName() {
+
+            console.log(name);
+
+        }
+        return displayName;
+    }
+
+    const myFunc = makeFunc();
+    myFunc();
+
+    // usually koi bhi function execute hone ke baad uska lexical environment delete ho jata hai..
+    
+    // so yeha par inner function i.e displayname function ko return kiya hai.. par inner function outer function i.e makefunc ka variable use kar raha hai "name". issleya bahar wala function delete nahi hoga... return sirf inner function ko kiya hai, par fir bhi pura outer function aur uske ander ke saare values aur ander ke saare functions(displayname) sab return hoga 
+
+    // closure ka matlab hai jab aap ek pura ka pura function  hi return kar dete ho to sirf function return nahi hota uska pura scope return hota hai, aur sirf scope nahi hai wo ..uska lexical scope return hota hai..
+    // interview mai lexical scope word nahi bola to out ho jaoge !!😂
+    
+
+
+
+
+    </script>
+    <script>
+
+            // Practical application of lexical scope and closure
+
+        // document.getElementById("orange").onclick = function ()
+        // {
+        //     document.body.style.backgroundColor = `orange`
+        // }
+
+        // document.getElementById("green").onclick = function ()
+        // {
+        //     document.body.style.backgroundColor = `green`
+        // }
+
+        // what if there are 500 buttons and same task have to be done??
+        // then this method is not recommended..
+
+        ////////////////////////////////////////////////////////
+
+        function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}` // ye aisa nahi chalega kyu ki direct execute ho jata hai
+
+            return function (){
+                document.body.style.backgroundColor = `${color}`
+            }
+            // return is very imp here
+        }
+
+        // document.getElementById('orange').onclick = clickHandler // reference nahi chalega 
+
+        document.getElementById('orange').onclick = clickHandler('orange') // executed bhi nahi chalega direct execute ho jayega..// return use karna hoga
+        document.getElementById('green').onclick = clickHandler('green') 
+
+        /////////////////////////////////////////////////////////////////
+
+    </script>
+
+</body>
+</html>
